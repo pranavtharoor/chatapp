@@ -46,21 +46,6 @@ exports.register = async (req, res) => {
   res.sendSuccess(newUser, 'User registered.');
 };
 
-exports.getTokenDetails = async (req, res) => {
-  const [err, userData] = await to(
-    user.findOne({
-      where: {
-        password: req.query.token,
-        type: 0
-      },
-      attributes: ['name', 'email']
-    })
-  );
-  if (err) return res.sendError(err);
-  if (!userData) return res.sendError(null, 'User not found', 404);
-  res.sendSuccess(userData);
-};
-
 exports.setPassword = async (req, res) => {
   let err, userData, salt, hash;
   [err, userData] = await to(
@@ -126,9 +111,14 @@ exports.login = async (req, res) => {
 exports.logout = (req, res) => {
   if (req.session.key)
     req.session.destroy(() => {
-      res.sendSuccess(null, 'Logged out');
+      res
+        .clearCookie('connect.sid', { path: '/' })
+        .sendSuccess(null, 'Logged out');
     });
-  else res.sendSuccess(null, 'Logged out');
+  else
+    res
+      .clearCookie('connect.sid', { path: '/' })
+      .sendSuccess(null, 'Logged out');
 };
 
 exports.searchUser = async (req, res) => {

@@ -21,6 +21,7 @@ function hasAccess(access) {
 }
 
 function isNotLoggedIn(req, res, next) {
+  return next(); //@TODO
   if (!req.session.key) return next();
   else res.redirect('/');
 }
@@ -33,12 +34,6 @@ router.get(
   auth.searchUser
 );
 router.get('/logout', auth.logout);
-router.get(
-  '/getTokenDetails',
-  isNotLoggedIn,
-  validator(schemas.auth.getTokenDetails),
-  auth.getTokenDetails
-);
 router.post('/login', isNotLoggedIn, validator(schemas.auth.login), auth.login);
 router.post(
   '/setPassword',

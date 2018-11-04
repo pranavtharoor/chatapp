@@ -1,0 +1,44 @@
+@import 'Src/core/common.scss';
+
+.navbar {
+  &.loggedin {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 2.5vw 0;
+
+    & > div {
+      background: $color-dark;
+      color: $color-light;
+      padding: 10px 20px;
+      margin: 20px;
+      border-radius: $radius;
+      font-size: 1.3rem;
+    }
+
+    .nav-btn {
+      border: none;
+    }
+  }
+
+  &:not(.loggedin) {
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 20px;
+
+    & > * {
+      text-decoration: none;
+      color: $color-light;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 30px;
+    }
+
+    .active {
+      display: none;
+    }
+  }
+}

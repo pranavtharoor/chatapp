@@ -23,7 +23,10 @@ const session = expressSession({
   saveUninitialized: false,
   secret: sessionSecret,
   store: redisStore,
-  cookie: { maxAge: 604800000 }
+  cookie: {
+    httpOnly: false, //@TODO
+    maxAge: 604800000
+  }
 });
 
 app.use(logger('dev'));
@@ -32,7 +35,7 @@ app.use(cookieParser('secret'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(responseFormat);
-app.use('/', routes);
+app.use('/api', routes);
 
 io.use((socket, next) => session(socket.request, socket.request.res, next));
 handleSocketIO(io);

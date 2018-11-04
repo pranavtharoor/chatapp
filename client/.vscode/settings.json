@@ -1,0 +1,14 @@
+{
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.associations": {
+    "*.scss": "scss",
+    "*.jsx": "javascript"
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[scss]": {
+    "editor.formatOnSave": true
+  }
+}

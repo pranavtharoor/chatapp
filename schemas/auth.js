@@ -1,11 +1,5 @@
 const Joi = require('joi');
 
-const getTokenDetails = Joi.object({
-  query: Joi.object({
-    token: Joi.string().required()
-  })
-});
-
 const register = Joi.object({
   body: Joi.object({
     name: Joi.string()
@@ -45,7 +39,6 @@ const searchUser = Joi.object({
 });
 
 module.exports = {
-  getTokenDetails,
   register,
   login,
   setPassword,
