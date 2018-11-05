@@ -12,8 +12,9 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Message.associate = models => {
+    models.message.belongsTo(models.conversation);
     models.message.belongsTo(models.user, { as: 'sender' });
-    models.message.belongsTo(models.user, { as: 'receiver' });
   };
+
   return Message;
 };

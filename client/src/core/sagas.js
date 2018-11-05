@@ -4,6 +4,8 @@ import { loginFormSaga } from 'Src/modules/LoginForm';
 import { registerFormSaga } from 'Src/modules/RegisterForm';
 import { forgotPasswordFormSaga } from 'Src/modules/ForgotPasswordForm';
 import { setPasswordFormSaga } from 'Src/modules/SetPasswordForm';
+import { conversationsSaga } from 'Src/modules/Conversations';
+import { searchUserSaga } from 'Src/modules/SearchUser';
 import { action } from 'Src/utils';
 
 function* init() {
@@ -21,7 +23,9 @@ export function* rootSaga() {
     loginFormSaga(),
     registerFormSaga(),
     forgotPasswordFormSaga(),
-    setPasswordFormSaga()
+    setPasswordFormSaga(),
+    conversationsSaga(),
+    searchUserSaga()
   ]);
 }
 

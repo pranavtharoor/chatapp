@@ -4,15 +4,13 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
-    },
-    group: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false
     }
   });
 
   Conversation.associate = models => {
     models.conversation.belongsTo(models.user);
+    models.conversation.belongsTo(models.user, { as: 'participant' });
   };
+
   return Conversation;
 };

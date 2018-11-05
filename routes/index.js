@@ -6,6 +6,7 @@ const schemas = require('../schemas');
 
 const auth = require('./auth');
 const home = require('./home');
+const conversations = require('./conversations');
 
 function hasAccess(access) {
   // 0-> Default 10-> Member 20-> Admin
@@ -43,6 +44,12 @@ router.post(
 );
 
 router.get('/init', home.init);
+router.get('/conversations', hasAccess(10), conversations.fetchConversations);
+router.post(
+  '/startConversation',
+  hasAccess(10),
+  conversations.startConversation
+);
 
 router.get('/', (req, res) => {
   req.session.key = 'hello' + Math.random();
