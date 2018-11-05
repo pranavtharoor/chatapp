@@ -14,7 +14,9 @@ const initialState = {
   loading: true,
   userData: {
     email: '',
-    name: ''
+    name: '',
+    id: null,
+    type: null
   }
 };
 

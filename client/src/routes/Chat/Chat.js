@@ -4,6 +4,7 @@ import Conversations from 'Src/modules/Conversations';
 import MessageComposer from 'Src/modules/MessageComposer';
 import SearchUser from 'Src/modules/SearchUser';
 import ChatBox from 'Src/modules/ChatBox';
+import ChatHeader from 'Src/modules/ChatHeader';
 import './chat.scss';
 
 class Chat extends Component {
@@ -18,9 +19,9 @@ class Chat extends Component {
   render() {
     return (
       <div className="chat-page">
-        Hello<br />
         <Conversations />
         <SearchUser />
+        <ChatHeader />
         <ChatBox />
         <MessageComposer />
       </div>

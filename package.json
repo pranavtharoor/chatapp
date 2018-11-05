@@ -24,7 +24,7 @@
     "uuid": "^3.3.2"
   },
   "scripts": {
-    "start": "node index"
+    "start": "nodemon --ignore 'client/*'"
   },
   "repository": {
     "type": "git",
@@ -33,5 +33,8 @@
   "bugs": {
     "url": "https://github.com/pranavtharoor/chatapp/issues"
   },
-  "homepage": "https://github.com/pranavtharoor/chatapp#readme"
+  "homepage": "https://github.com/pranavtharoor/chatapp#readme",
+  "devDependencies": {
+    "nodemon": "1.18.6"
+  }
 }

@@ -1,15 +1,14 @@
 import { connect } from 'react-redux';
 import { pick } from 'ramda';
-import ChatBox from './ChatBox';
+import ChatHeader from './ChatHeader';
 
 const mapDispatchToProps = () => ({});
 
 const mapStateToProps = state => ({
-  ...pick(['messages'], state.chat),
-  ...pick(['id'], state.common.userData)
+  ...pick(['participantName', 'participantEmail'], state.header)
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ChatBox);
+)(ChatHeader);

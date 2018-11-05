@@ -1,3 +1,3 @@
-import MessageComposer from './MessageComposer';
+import MessageComposer from './messageComposer.container';
 
 export default MessageComposer;

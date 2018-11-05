@@ -7,6 +7,7 @@ const schemas = require('../schemas');
 const auth = require('./auth');
 const home = require('./home');
 const conversations = require('./conversations');
+const messages = require('./messages');
 
 function hasAccess(access) {
   // 0-> Default 10-> Member 20-> Admin
@@ -45,6 +46,7 @@ router.post(
 
 router.get('/init', home.init);
 router.get('/conversations', hasAccess(10), conversations.fetchConversations);
+router.get('/messages', hasAccess(10), messages.fetchMessages);
 router.post(
   '/startConversation',
   hasAccess(10),

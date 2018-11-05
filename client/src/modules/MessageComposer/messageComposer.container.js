@@ -1,15 +1,14 @@
 import { connect } from 'react-redux';
-import { pick } from 'ramda';
-import ChatBox from './ChatBox';
+import MessageComposer from './MessageComposer';
 
 const mapDispatchToProps = () => ({});
 
 const mapStateToProps = state => ({
-  ...pick(['messages'], state.chat),
-  ...pick(['id'], state.common.userData)
+  conversationId: state.header.id,
+  senderId: state.common.userData.id
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ChatBox);
+)(MessageComposer);
