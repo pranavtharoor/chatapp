@@ -15,11 +15,12 @@ let SetPasswordForm = props => (
           })
         )}
       >
+        <h1>Register</h1>
         <Field
           name="password"
           component="input"
           type="password"
-          placeholder="NEW PASSWORD"
+          placeholder="Password"
         />
         <br />
         <button>SET PASSWORD</button>

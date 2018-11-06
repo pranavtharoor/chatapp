@@ -7,6 +7,7 @@ import './loginForm.scss';
 let LoginForm = props => (
   <div className="login-form">
     <div className="form">
+      <h1>Login</h1>
       <form
         onSubmit={props.handleSubmit(data =>
           props.onLogin({ data, push: props.history.push })
@@ -18,14 +19,14 @@ let LoginForm = props => (
           name="email"
           component="input"
           type="text"
-          placeholder="EMAIL"
+          placeholder="Email"
         />
         <br />
         <Field
           name="password"
           component="input"
           type="password"
-          placeholder="PASSWORD"
+          placeholder="Password"
         />
         <br />
         <button>LOGIN</button>

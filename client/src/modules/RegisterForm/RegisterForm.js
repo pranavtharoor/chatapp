@@ -17,9 +17,9 @@ const registerValidate = values => {
 };
 
 let RegisterField = ({ input, label, type, meta: { touched, error } }) => (
-  <div>
+  <div className="field">
     <input {...input} placeholder={label} type={type} />
-    <span className="error">{touched && (error && error)}</span>
+    <div className="error">{touched && (error && error)}</div>
   </div>
 );
 
@@ -36,6 +36,7 @@ RegisterField.propTypes = {
 let RegisterForm = props => (
   <div className="register-form">
     <div className="form">
+      <h1>Register</h1>
       <form
         onSubmit={props.handleSubmit(data =>
           props.onRegister({ data, push: props.history.push })

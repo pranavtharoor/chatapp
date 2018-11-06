@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SetPasswordForm from 'Src/modules/SetPasswordForm';
+import SpeechBubble from 'Src/modules/SpeechBubble';
 import './setPassword.scss';
 
 class SetPassword extends Component {
@@ -21,6 +22,11 @@ class SetPassword extends Component {
   render() {
     return (
       <div className="set-password-page">
+        <div className="details">
+          <SpeechBubble>
+            Complete your registration by choosing a secure password.
+          </SpeechBubble>
+        </div>
         <div className="form-container">
           <SetPasswordForm token={this.state.token} />
         </div>
