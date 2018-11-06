@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import User from 'Src/modules/User';
 import './conversations.scss';
 
 class Conversations extends Component {
@@ -24,11 +25,14 @@ class Conversations extends Component {
     return (
       <div className="conversations">
         {this.props.conversations.map((conversation, i) => (
-          <div key={`conversation_${i}`}>
-            {conversation.participantName} {conversation.participantEmail}
-            <button onClick={() => this.props.openChat(conversation)}>
-              Chat
-            </button>
+          <div
+            key={`conversation_${i}`}
+            onClick={() => this.props.openChat(conversation)}
+          >
+            <User
+              name={conversation.participantName}
+              email={conversation.participantEmail}
+            />
           </div>
         ))}
       </div>

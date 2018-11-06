@@ -28,6 +28,10 @@
         border: none;
         color: $color-dark;
         height: 100%;
+
+        &:focus {
+          outline: none;
+        }
       }
     }
   }

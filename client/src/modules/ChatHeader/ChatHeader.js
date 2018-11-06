@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './chatHeader.scss';
 
 const ChatHeader = props => (
-  <div>
-    {props.participantName}
-    {props.participantEmail}
+  <div className="chat-header">
+    <div className="name">{props.participantName}</div>
+    <div className="email">{props.participantEmail}</div>
   </div>
 );
 

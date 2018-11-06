@@ -15,11 +15,11 @@
     width: 100%;
 
     .chat-header-container {
-      height: 30px;
+      height: 37.44px;
     }
 
     .chat-box-container {
-      height: calc(100% - 80px);
+      height: calc(100% - 37.44px - 50px);
     }
 
     .message-composer-container {

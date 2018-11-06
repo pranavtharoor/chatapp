@@ -2,8 +2,10 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import { request, action } from 'Src/utils';
 
 function* searchUser({ payload }) {
-  console.log('asdasd', payload);
-  if (!payload.search) return;
+  if (!payload.search) {
+    yield put(action('FETCH_SEARCH_USER_SUCCESS', []));
+    return;
+  }
   const data = yield call(request, '/searchUser?search=' + payload.search);
   if (data.success) {
     yield put(action('SET_SNACKBAR', { type: 'success', message: data.msg }));

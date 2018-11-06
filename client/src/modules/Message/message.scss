@@ -1,0 +1,25 @@
+@import 'Src/core/common.scss';
+
+.message {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  line-height: 20px;
+  display: flex;
+
+  .box {
+    border-radius: 2px;
+    box-shadow: 0 0 3px 1px rgba(200, 200, 200, 0.2);
+    padding: 6px 10px;
+    max-width: 60%;
+    width: auto;
+    display: inline-block;
+
+    &.left {
+      background: #ffffff;
+    }
+
+    &.right {
+      background: #f2f6f7;
+    }
+  }
+}

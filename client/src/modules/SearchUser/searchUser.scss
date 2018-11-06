@@ -1,0 +1,19 @@
+@import 'Src/core/common.scss';
+
+.search-user {
+  background: #dfdfdf;
+  border-bottom: solid 2px $color-primary;
+
+  .form {
+    input {
+      padding: 10px 15px;
+      width: 100%;
+      background: none;
+      border: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

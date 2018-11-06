@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { socketConnect } from 'socket.io-react';
 import PropTypes from 'prop-types';
+import './messageComposer.scss';
 
 class MessageComposer extends Component {
   static propTypes = {
@@ -26,16 +27,19 @@ class MessageComposer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="message-composer">
         <input
           value={this.state.message}
           onChange={e =>
             this.props.conversationId &&
             this.setState({ message: e.target.value })
           }
+          onKeyPress={e =>
+            e.key === 'Enter' && this.props.conversationId && this.sendMessage()
+          }
         />
         <button onClick={() => this.props.conversationId && this.sendMessage()}>
-          send
+          SEND
         </button>
       </div>
     );

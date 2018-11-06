@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import Captcha from 'Src/modules/Captcha';
+// import Captcha from 'Src/modules/Captcha';
 import './registerForm.scss';
 
 const registerValidate = values => {
@@ -48,7 +48,7 @@ let RegisterForm = props => (
           type="email"
           label="Email"
         />
-        <Field name="captcharesponse" component={Captcha} />
+        {/* <Field name="captcharesponse" component={Captcha} /> */}
         <button>REGISTER</button>
       </form>
     </div>

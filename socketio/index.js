@@ -22,10 +22,11 @@ module.exports = io => {
       );
       if (err) console.log(err);
       const receiverSocket = activeSockets[data.participantEmail];
+      if (data.participantEmail !== socket.request.session.key.email)
+        socket.emit('new message', data);
       data.participantEmail = undefined;
       delete data.participantEmail;
       if (receiverSocket) receiverSocket.emit('new message', data);
-      socket.emit('new message', data);
     });
   });
 };

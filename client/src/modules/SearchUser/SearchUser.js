@@ -2,6 +2,8 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import User from 'Src/modules/User';
+import './searchUser.scss';
 
 let SearchUser = props => (
   <div className="search-user">
@@ -14,14 +16,12 @@ let SearchUser = props => (
           type="text"
           placeholder="SEARCH"
         />
-        <button>SEARCH</button>
       </form>
     </div>
     <div>
       {props.users.map((user, i) => (
-        <div key={`user_${i}`}>
-          {user.name} {user.email}
-          <button onClick={() => props.startConversation(user.id)}>Chat</button>
+        <div key={`user_${i}`} onClick={() => props.startConversation(user.id)}>
+          <User name={user.name} email={user.email} />
         </div>
       ))}
     </div>

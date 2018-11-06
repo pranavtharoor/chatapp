@@ -1,0 +1,12 @@
+@import 'Src/core/common.scss';
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 15px;
+
+  .email {
+    font-size: $font-small;
+  }
+}
