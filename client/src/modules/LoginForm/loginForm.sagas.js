@@ -12,6 +12,7 @@ function* login({ payload }) {
     if (data.success) {
       yield put(action('SET_SNACKBAR', { type: 'success', message: data.msg }));
       yield put(action('SET_LOGGED_IN', true));
+      yield put(action('FETCH_INIT_SUCCESS', data.data));
       yield payload.push('/');
     } else
       yield put(action('SET_SNACKBAR', { type: 'danger', message: data.msg }));

@@ -8,7 +8,9 @@ const redisConfig = {
   ttl: 604800
 };
 
-module.exports = session => {
+exports.redisClient = client;
+
+module.exports.store = session => {
   const redisStore = require('connect-redis')(session);
   return new redisStore(redisConfig);
 };

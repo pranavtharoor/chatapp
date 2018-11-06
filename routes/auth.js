@@ -29,9 +29,8 @@ exports.register = async (req, res) => {
     toEmail: newUser.email
   };
   let mailData, resp;
-  console.log(regLink);
   [err, resp] = await to(
-    fetch(endpoints.mail + '/send/reglink', {
+    fetch(endpoints.mail + '/chat/register', {
       method: 'POST',
       headers: {
         Authorization: mailerConfig.key,
@@ -40,6 +39,7 @@ exports.register = async (req, res) => {
       body: JSON.stringify(regLink)
     })
   );
+  if (err) console.log(err);
   if (err) return res.sendSuccess(null, 'User registered. Mail not sent');
   [err, mailData] = await to(resp.json());
   if (err) return res.sendSuccess(null, 'User registered. Mail not sent');

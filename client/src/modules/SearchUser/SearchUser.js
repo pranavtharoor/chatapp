@@ -10,6 +10,7 @@ let SearchUser = props => (
         <Field
           name="search"
           component="input"
+          autoComplete="off"
           type="text"
           placeholder="SEARCH"
         />
@@ -19,7 +20,7 @@ let SearchUser = props => (
     <div>
       {props.users.map((user, i) => (
         <div key={`user_${i}`}>
-          {user.email}
+          {user.name} {user.email}
           <button onClick={() => props.startConversation(user.id)}>Chat</button>
         </div>
       ))}

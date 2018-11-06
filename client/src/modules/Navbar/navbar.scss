@@ -2,21 +2,33 @@
 
 .navbar {
   &.loggedin {
+    padding: 0 20px;
+    align-items: center;
+    height: 52px;
     display: flex;
     justify-content: space-between;
-    padding: 15px 2.5vw 0;
+    background: $color-light;
 
-    & > div {
-      background: $color-dark;
-      color: $color-light;
-      padding: 10px 20px;
-      margin: 20px;
-      border-radius: $radius;
-      font-size: 1.3rem;
+    .details {
+      margin-right: 30px;
+
+      .email {
+        font-size: $font-small;
+      }
     }
 
-    .nav-btn {
-      border: none;
+    .options {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+
+      .logout {
+        background: none;
+        border: none;
+        color: $color-dark;
+        height: 100%;
+      }
     }
   }
 

@@ -1,3 +1,3 @@
 module.exports = {
-  mail: ''
+  mail: process.env.MAILER_ENDPOINT
 };

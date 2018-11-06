@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './conversations.scss';
 
 class Conversations extends Component {
   static propTypes = {
@@ -21,7 +22,7 @@ class Conversations extends Component {
 
   render() {
     return (
-      <div>
+      <div className="conversations">
         {this.props.conversations.map((conversation, i) => (
           <div key={`conversation_${i}`}>
             {conversation.participantName} {conversation.participantEmail}

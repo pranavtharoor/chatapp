@@ -5,6 +5,7 @@ const mapDispatchToProps = () => ({});
 
 const mapStateToProps = state => ({
   conversationId: state.header.id,
+  participantEmail: state.header.participantEmail,
   senderId: state.common.userData.id
 });
 

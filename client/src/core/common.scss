@@ -10,6 +10,7 @@ $color-text-light: #ffffff;
 
 $radius: 7px;
 $card-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+$font-small: 0.7rem;
 
 @function gr($length) {
   @return $length * 1.61803398875;

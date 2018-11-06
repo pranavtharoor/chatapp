@@ -7,21 +7,21 @@ class Navbar extends Component {
   static propTypes = {
     logout: PropTypes.func.isRequired,
     name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
     loggedIn: PropTypes.bool.isRequired
   };
 
   render() {
     return this.props.loggedIn ? (
       <div className="navbar loggedin">
-        <div className="dropdown-container">
-          <div className="dropdown">
-            <div className="menu">
-              <div className="name">{this.props.name}</div>
-              <button className="nav-btn" onClick={this.props.logout}>
-                Logout
-              </button>
-            </div>
-          </div>
+        <div className="details">
+          <div className="name">{this.props.name}</div>
+          <div className="email">{this.props.email}</div>
+        </div>
+        <div className="options">
+          <button className="logout" onClick={this.props.logout}>
+            LOG OUT
+          </button>
         </div>
       </div>
     ) : (

@@ -4,5 +4,26 @@
   display: flex;
   width: 100%;
   justify-content: space-around;
-  flex-wrap: wrap;
+  height: calc(100vh - 52px);
+  overflow: hidden;
+
+  .side-panel {
+    width: 400px;
+  }
+
+  .chat-main {
+    width: 100%;
+
+    .chat-header-container {
+      height: 30px;
+    }
+
+    .chat-box-container {
+      height: calc(100% - 80px);
+    }
+
+    .message-composer-container {
+      height: 50px;
+    }
+  }
 }

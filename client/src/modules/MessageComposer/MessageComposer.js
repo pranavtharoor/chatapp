@@ -6,7 +6,8 @@ class MessageComposer extends Component {
   static propTypes = {
     socket: PropTypes.object.isRequired,
     conversationId: PropTypes.number,
-    senderId: PropTypes.number
+    senderId: PropTypes.number,
+    participantEmail: PropTypes.string
   };
 
   state = {
@@ -17,7 +18,8 @@ class MessageComposer extends Component {
     this.props.socket.emit('send message', {
       message: this.state.message,
       conversationId: this.props.conversationId,
-      senderId: this.props.senderId
+      senderId: this.props.senderId,
+      participantEmail: this.props.participantEmail
     });
     this.setState({ message: '' });
   }

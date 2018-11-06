@@ -9,7 +9,7 @@ const http = require('http');
 const socketio = require('socket.io');
 
 const models = require('./models');
-const redisStore = require('./config/redis')(expressSession);
+const redisStore = require('./config/redis').store(expressSession);
 const routes = require('./routes');
 const responseFormat = require('./utils/responseFormat');
 const sessionSecret = require('./config/session').secret;

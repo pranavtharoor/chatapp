@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './chatBox.scss';
 
 const ChatBox = props => (
-  <div>
-    Chat box{props.messages.map((message, i) => (
+  <div className="chat-box">
+    {props.messages.map((message, i) => (
       <div
         style={{ textAlign: props.id === message.senderId ? 'right' : 'left' }}
         key={`message_${i}`}

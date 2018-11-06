@@ -32,7 +32,7 @@ let LoginForm = props => (
         <br />
         <br />
         <NavLink exact={true} to="/forgotpassword" activeClassName="active">
-          <div className="forgot">Forgot Password?</div>
+          {/* <div className="forgot">Forgot Password?</div> */}
         </NavLink>
       </form>
     </div>

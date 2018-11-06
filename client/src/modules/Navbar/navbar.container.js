@@ -9,7 +9,7 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = state => ({
   ...pick(['loggedIn'], state.common),
-  ...pick(['name'], state.common.userData)
+  ...pick(['name', 'email'], state.common.userData)
 });
 
 export default connect(

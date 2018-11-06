@@ -53,30 +53,4 @@ router.post(
   conversations.startConversation
 );
 
-router.get('/', (req, res) => {
-  req.session.key = 'hello' + Math.random();
-  req.session.save(() => {
-    res.send(`
-    <div id="c"></div>
-    <form id="f">
-      <input id="i" />
-      <input id="j" />
-      <button />
-      </form>
-      <script src="/socket.io/socket.io.js"></script>
-      <script>
-      var socket = io.connect();
-      document.getElementById('f').addEventListener('submit', e => {
-        e.preventDefault();
-        socket.emit('send message', document.getElementById('i').value);
-        socket.emit('broadcast message', document.getElementById('j').value);
-        document.getElementById('i').value = '';
-        document.getElementById('j').value = '';
-      });
-      socket.on('new message', data => document.getElementById('c').innerHTML += data);
-      </script>
-      `);
-  });
-});
-
 module.exports = router;
