@@ -5,6 +5,10 @@ import { socketUrl } from 'Config/endpoints';
 
 const socket = io.connect(socketUrl);
 
-socket.on('new message', msg => store.dispatch(action('NEW_MESSAGE', msg)));
+socket.on('new message', msg => {
+  const storeState = store.getState();
+  if (storeState.header.id === msg.conversationId)
+    store.dispatch(action('NEW_MESSAGE', msg));
+});
 
 export default socket;
