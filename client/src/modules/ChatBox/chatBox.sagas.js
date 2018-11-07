@@ -11,8 +11,10 @@ function* fetchChat({ payload }) {
       conversation => conversation.id === payload.id
     );
     const conv = [...storeState.conversations.conversations];
-    conv[index].unread = false;
-    yield put(action('FETCH_CONVERSATIONS_SUCCESS', conv));
+    if (index !== -1) {
+      conv[index].unread = false;
+      yield put(action('FETCH_CONVERSATIONS_SUCCESS', conv));
+    }
     yield put(action('FETCH_CHAT_SUCCESS', data.data));
   } else
     yield put(action('SET_SNACKBAR', { type: 'danger', message: data.msg }));

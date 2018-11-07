@@ -14,8 +14,10 @@ socket.on('new message', msg => {
       conversation => conversation.id === msg.conversationId
     );
     const conv = [...storeState.conversations.conversations];
-    conv[index].unread = true;
-    store.dispatch(action('FETCH_CONVERSATIONS_SUCCESS', conv));
+    if (index !== -1) {
+      conv[index].unread = true;
+      store.dispatch(action('FETCH_CONVERSATIONS_SUCCESS', conv));
+    }
   }
 });
 
