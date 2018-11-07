@@ -7,7 +7,7 @@ function* register({ payload }) {
   const data = yield call(request, '/register', payload.data);
   if (data.success) {
     yield put(action('SET_SNACKBAR', { type: 'success', message: data.msg }));
-    yield payload.push('/login');
+    yield put(action('REGISTERATION_FILLED'));
   } else
     yield put(action('SET_SNACKBAR', { type: 'danger', message: data.msg }));
   yield delay(3000);

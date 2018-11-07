@@ -3,4 +3,6 @@
 .conversations {
   background: #ffffff;
   height: 100%;
+  overflow: auto;
+  @include scrollbar();
 }

@@ -7,8 +7,10 @@ const Login = () => (
   <div className="login-page">
     <div className="details">
       <SpeechBubble>
-        lasdasjdlasjd alskdj alskdj asldkj asldkjas dlkasj dlkasdj laksdj alskdj
-        asdlkja sd
+        Hey!<br />Login and let the chatting begin!<br />
+        <br />
+        First time here? No worries. Create an account by clicking on the
+        register button in the top right corner.
       </SpeechBubble>
     </div>
     <div className="form-container">

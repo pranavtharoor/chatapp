@@ -13,6 +13,9 @@
     max-width: 60%;
     width: auto;
     display: inline-block;
+    transition: all 200ms ease-in-out;
+    opacity: 0;
+    transform: translateY(10px);
 
     &.left {
       background: #ffffff;

@@ -1,3 +1,3 @@
 import asyncComponent from 'Src/enhancers/asyncComponent';
 
-export default asyncComponent(() => import('./Register'));
+export default asyncComponent(() => import('./register.container'));

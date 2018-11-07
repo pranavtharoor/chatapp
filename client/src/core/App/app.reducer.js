@@ -6,12 +6,14 @@ const actionHandlers = {
     ...s,
     userData: { ...s.userData, ...a.payload }
   }),
-  SET_LOADING: (s, a) => ({ ...s, loading: a.payload })
+  SET_LOADING: (s, a) => ({ ...s, loading: a.payload }),
+  REGISTERATION_FILLED: s => ({ ...s, registrationFilled: true })
 };
 
 const initialState = {
   loggedIn: false,
   loading: true,
+  registrationFilled: false,
   userData: {
     email: '',
     name: '',

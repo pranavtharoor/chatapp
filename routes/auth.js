@@ -43,7 +43,7 @@ exports.register = async (req, res) => {
   if (err) return res.sendSuccess(null, 'User registered. Mail not sent');
   [err, mailData] = await to(resp.json());
   if (err) return res.sendSuccess(null, 'User registered. Mail not sent');
-  res.sendSuccess(newUser, 'User registered.');
+  res.sendSuccess(newUser, 'Email sent.');
 };
 
 exports.setPassword = async (req, res) => {
