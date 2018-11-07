@@ -6,6 +6,7 @@
   margin: 1px 0;
   cursor: pointer;
   transition: all 0.3s ease;
+  position: relative;
 
   &:hover {
     background: #eee;
@@ -13,5 +14,15 @@
 
   .email {
     font-size: $font-small;
+  }
+
+  .unread {
+    height: 10px;
+    width: 10px;
+    background: rgb(33, 182, 33);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 5px;
   }
 }

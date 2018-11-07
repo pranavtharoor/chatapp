@@ -9,6 +9,14 @@ socket.on('new message', msg => {
   const storeState = store.getState();
   if (storeState.header.id === msg.conversationId)
     store.dispatch(action('NEW_MESSAGE', msg));
+  else {
+    const index = storeState.conversations.conversations.findIndex(
+      conversation => conversation.id === msg.conversationId
+    );
+    const conv = [...storeState.conversations.conversations];
+    conv[index].unread = true;
+    store.dispatch(action('FETCH_CONVERSATIONS_SUCCESS', conv));
+  }
 });
 
 export default socket;

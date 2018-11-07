@@ -11,7 +11,8 @@ class Conversations extends Component {
         id: PropTypes.number.isRequired,
         participantId: PropTypes.number.isRequired,
         participantEmail: PropTypes.string.isRequired,
-        participantName: PropTypes.string.isRequired
+        participantName: PropTypes.string.isRequired,
+        unread: PropTypes.bool
       })
     ).isRequired,
     openChat: PropTypes.func.isRequired
@@ -32,6 +33,7 @@ class Conversations extends Component {
             <User
               name={conversation.participantName}
               email={conversation.participantEmail}
+              unread={conversation.unread}
             />
           </div>
         ))}
