@@ -19,7 +19,8 @@ class Chat extends Component {
   };
 
   state = {
-    id: null
+    id: null,
+    sideOpen: true
   };
 
   componentDidMount() {
@@ -41,7 +42,13 @@ class Chat extends Component {
   render() {
     return (
       <div className="chat-page">
-        <div className="side-panel">
+        <div
+          className="side-panel-toggle"
+          onClick={() => this.setState({ sideOpen: !this.state.sideOpen })}
+        >
+          💬
+        </div>
+        <div className={`side-panel ${this.state.sideOpen && 'open'}`}>
           <SearchUser />
           <Conversations />
         </div>

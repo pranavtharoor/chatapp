@@ -5,4 +5,11 @@
   height: 100%;
   overflow: auto;
   @include scrollbar();
+
+  .fallback {
+    color: $color-disabled;
+    text-align: center;
+    padding: 20px;
+    font-size: $font-small;
+  }
 }

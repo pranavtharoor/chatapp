@@ -35,6 +35,12 @@ class Conversations extends Component {
             />
           </div>
         ))}
+        {this.props.conversations.length === 0 && (
+          <div className="fallback">
+            Use the search bar to find other users and start your first
+            conversation.
+          </div>
+        )}
       </div>
     );
   }
